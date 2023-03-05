@@ -31,7 +31,7 @@
         class="btn-icon rounded-circle"
         @click="handleDeleteRow"
       >
-        <feather-icon icon="Trash2Icon" />
+        <at-feather-icon icon="Trash2Icon" />
       </b-button>
     </b-col>
   </b-row>

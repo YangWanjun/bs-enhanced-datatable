@@ -4,6 +4,8 @@
   "description": "bootstrap-vue datatable",
   "main": "index.js",
   "scripts": {
+    "build": "webpack --mode production",
+    "start": "webpack-dev-server --mode development",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,5 +21,28 @@
   "bugs": {
     "url": "https://github.com/YangWanjun/bs-enhanced-datatable/issues"
   },
-  "homepage": "https://github.com/YangWanjun/bs-enhanced-datatable#readme"
+  "homepage": "https://github.com/YangWanjun/bs-enhanced-datatable#readme",
+  "peerDependencies": {
+    "bootstrap": "^4.6.0",
+    "bootstrap-vue": "^2.21.1",
+    "vee-validate": "^3.4.5",
+    "vue": "^2.6.12"
+  },
+  "devDependencies": {
+    "css-loader": "^6.7.3",
+    "eslint": "^8.35.0",
+    "eslint-plugin-vue": "^9.9.0",
+    "eslint-webpack-plugin": "^4.0.0",
+    "html-webpack-plugin": "^5.5.0",
+    "style-loader": "^3.3.1",
+    "vue-loader": "^15.10.0",
+    "vue-router": "^3.4.9",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.11.1"
+  },
+  "dependencies": {
+    "vue-feather-icons": "^5.1.0",
+    "vue-form-wizard": "^0.8.4"
+  }
 }

@@ -117,18 +117,19 @@ export default {
       const step = this.steps[stepIndex]
       const refName = `step-${stepIndex}-form`;
       const formData = this.data[step.formProps.name]
-      return new Promise(async(resolve, reject) => {
-        const isValid = await self.$refs[refName][0].validate();
+      return new Promise((resolve, reject) => {  // eslint-disable-line
+        return resolve(self.$refs[refName][0].validate())
+      }).then(async(isValid) => {
         if (isValid) {
           if (step.onBeforeChange) {
             // onBeforeChangeの中に、true/falseのPromiseを戻してください。
             const val = await step.onBeforeChange(formData, self.data);
-            return resolve(val);
+            return val;
           } else {
-            return resolve(true);
+            return true;
           }
         } else {
-          return reject(false);
+          return Promise.reject(false);
         }
       })
     },

@@ -81,8 +81,8 @@ const table = {
   },
 
   downloadDataTableCSV: function(filename, tableHead, tableData) {
-    const data = common.dataTableToCSV(tableHead, tableData);
-    common.downloadCSV(data, filename);
+    const data = table.dataTableToCSV(tableHead, tableData);
+    table.downloadCSV(data, filename);
   },
 
   /**
@@ -109,7 +109,7 @@ const table = {
       csvArray.push(dataArray);
     });
 
-    return common.arrayToCSV(csvArray);
+    return table.arrayToCSV(csvArray);
   },
 
   arrayToCSV: function(array) {

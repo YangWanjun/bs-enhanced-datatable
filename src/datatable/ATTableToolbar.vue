@@ -24,7 +24,7 @@
           v-b-tooltip.hover.bottom="action.tooltip"
           @click="action.handleClick"
         >
-          <feather-icon :icon="action.iconName" size="16"/>
+          <at-feather-icon :icon="action.iconName" size="16"/>
         </b-button>
         <b-button
           v-if="addProps.schema && addProps.visible !== false"
@@ -33,7 +33,7 @@
           v-b-tooltip.hover.bottom="addProps.title"
           @click="$refs._dlgAdd && $refs._dlgAdd.show()"
         >
-          <feather-icon icon="PlusIcon" size="16"/>
+          <at-feather-icon icon="PlusIcon" size="16"/>
         </b-button>
         <b-button
           v-if="csv"
@@ -42,7 +42,7 @@
           v-b-tooltip.hover.bottom="'CSVをダウンロード'"
           @click="download"
         >
-          <feather-icon icon="DownloadCloudIcon" size="16"/>
+          <at-feather-icon icon="DownloadCloudIcon" size="16"/>
         </b-button>
         <b-button
           v-if="hasFilter"
@@ -51,20 +51,18 @@
           v-b-tooltip.hover.bottom="'絞り込み'"
           @click="showFilter = !showFilter"
         >
-          <feather-icon icon="FilterIcon"/>
+          <at-feather-icon icon="FilterIcon"/>
         </b-button>
       </div>
     </div>
     <b-collapse v-model="showFilter" class="mt-0">
-      <b-form @submit.prevent>
-        <at-form-layout
-          :schema="filterTableHead"
-          :layout="filterLayout"
-          :value="filters"
-          :singleLine="true"
-          @input="handleFilterChanged"
-        />
-      </b-form>
+      <at-form-layout
+        :schema="filterTableHead"
+        :layout="filterLayout"
+        :value="filters"
+        :singleLine="true"
+        @input="handleFilterChanged"
+      />
     </b-collapse>
     <at-form-dialog
       v-if="addProps.schema && addProps.visible !== false"

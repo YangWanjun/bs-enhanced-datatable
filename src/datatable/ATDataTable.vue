@@ -20,6 +20,8 @@
       :items="filteredData"
       :small="small"
       :sticky-header="stickyHeader"
+      :current-page="currentPage"
+      :per-page="rowsPerPage"
       show-empty
       empty-text="データがありません。"
     >
@@ -43,7 +45,7 @@
               v-b-tooltip.hover.bottom="act.tooltip"
               @click="act.handleClick(row.item)"
             >
-              <feather-icon :icon="act.iconName"/>
+              <at-feather-icon :icon="act.iconName"/>
             </b-button>
           </template>
           <b-button
@@ -53,7 +55,7 @@
             v-b-tooltip.hover.bottom="changeProps.title"
             @click="$refs._dlgChange && $refs._dlgChange.show(row.item)"
           >
-            <feather-icon icon="EditIcon"/>
+            <at-feather-icon icon="EditIcon"/>
           </b-button>
           <b-button
             v-if="deleteProps.handleOk && deleteProps.visible !== false"
@@ -62,7 +64,7 @@
             v-b-tooltip.hover.bottom="deleteProps.title"
             @click="showDeleteConfirm(row.item)"
           >
-            <feather-icon icon="Trash2Icon"/>
+            <at-feather-icon icon="Trash2Icon"/>
           </b-button>
         </div>
       </template>
@@ -93,13 +95,13 @@
             next-class="next-item"
           >
             <template #prev-text>
-              <feather-icon
+              <at-feather-icon
                 icon="ChevronLeftIcon"
                 size="18"
               />
             </template>
             <template #next-text>
-              <feather-icon
+              <at-feather-icon
                 icon="ChevronRightIcon"
                 size="18"
               />

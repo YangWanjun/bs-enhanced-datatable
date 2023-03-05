@@ -147,7 +147,7 @@ const common = {
   /**
    * 渡された値は項目型に一致するように変更
    * 例：type=booleanの場合、true/falseに変換
-   * 　　type=choiceの場合、値を選択肢のvalueの型に変換
+   * type=choiceの場合、値を選択肢のvalueの型に変換
    * @param {[String, Number, Boolean, Array]} value 
    * @param {Object} field 
    * @returns 

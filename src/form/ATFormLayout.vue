@@ -1,5 +1,5 @@
 <template>
-  <b-container>
+  <div class="p-1">
     <validation-observer ref="observer">
       <b-form>
         <b-list-group class="mb-2" v-if="errors.non_field_errors">
@@ -31,7 +31,7 @@
           />
           <div v-if="allowAdd !== false">
             <b-button variant="outline-primary w-100 mb-1" @click="handleAddRow">
-              <feather-icon icon="PlusIcon" />
+              <at-feather-icon icon="PlusIcon" />
               追加
             </b-button>
           </div>
@@ -72,7 +72,7 @@
                 class="btn-icon rounded-circle"
                 @click="onDelete(inlineIndex)"
               >
-                <feather-icon icon="Trash2Icon" />
+                <at-feather-icon icon="Trash2Icon" />
               </b-button>
             </b-col>
           </b-row>
@@ -96,7 +96,7 @@
         </template>
       </b-form>
     </validation-observer>
-  </b-container>
+  </div>
 </template>
 <script>
 import { common, table } from '../utils'
@@ -196,15 +196,13 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
-.inline-form {
-  h3 {
-    border-bottom: 3px solid #4c4c4c;
-    padding-bottom: 5px;
-  }
-  div.container {
-    padding-left: 0;
-    padding-right: 0;
-  }
+<style scoped>
+.inline-form h3 {
+  border-bottom: 3px solid #4c4c4c;
+  padding-bottom: 5px;
+}
+.inline-form div.container {
+  padding-left: 0;
+  padding-right: 0;
 }
 </style>
