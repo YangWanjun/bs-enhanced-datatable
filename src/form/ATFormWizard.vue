@@ -86,7 +86,11 @@ export default {
       _steps.map(s => {
         // 同じ名称のデータは複数のフォームの分ける可能性があるので、Object.assignを使う。
         const tmpData = (s.formProps && s.formProps.data) ? s.formProps.data : ({})
-        _data[s.formProps.name] = Object.assign(_data[s.formProps.name] || {}, tmpData);
+        if (Array.isArray(tmpData)) {
+          _data[s.formProps.name] = tmpData;
+        } else {
+          _data[s.formProps.name] = Object.assign(_data[s.formProps.name] || {}, tmpData);
+        }
       });
       return _data;
     },
